@@ -1,7 +1,5 @@
 <h1 align="center">✨ Code Editor - Next.js ✨</h1>
 
-![Demo App](/public/screenshot-for-readme.png)
-
 Highlights:
 
 - 🚀 Tech stack: Next.js 15 + Convex + Clerk + TypeScript
