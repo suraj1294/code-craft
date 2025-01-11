@@ -1,4 +1,4 @@
-<h1 align="center">✨ SaaS Code Editor - Next.js 15 ✨</h1>
+<h1 align="center">✨ Code Editor - Next.js ✨</h1>
 
 ![Demo App](/public/screenshot-for-readme.png)
 
