@@ -9,10 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@clerk/nextjs": "^6.6.0",
+    "@clerk/nextjs": "^6.9.9",
     "@monaco-editor/react": "^4.6.0",
-    "convex": "^1.17.3",
-    "framer-motion": "^11.13.1",
+    "convex": "^1.17.4",
     "lucide-react": "^0.464.0",
     "motion": "^11.17.0",
     "next": "15.1.4",
