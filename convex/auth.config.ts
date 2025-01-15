@@ -1,7 +1,7 @@
 const provider = {
   providers: [
     {
-      domain: "https://cute-meerkat-90.clerk.accounts.dev",
+      domain: "https://clerk.code-it.suraj-patil.in",
       applicationID: "convex",
     },
   ],
