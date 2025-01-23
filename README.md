@@ -13,7 +13,6 @@ Highlights:
 - 📊 Comprehensive statistics dashboard
 - ⚙️ Customizable font size controls
 - 🔗 Webhook integration support
-- 🌟 Professional deployment walkthrough
 
 ### Setup .env file
 
