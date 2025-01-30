@@ -76,14 +76,14 @@ function ProfileHeader({ userStats, userData, user }: ProfileHeaderProps) {
 
   return (
     <div
-      className="relative mb-8 bg-gradient-to-br from-[#12121a] to-[#1a1a2e] rounded-2xl p-8 border
+      className="relative mb-8 bg-linear-to-br from-[#12121a] to-[#1a1a2e] rounded-2xl p-8 border
      border-gray-800/50 overflow-hidden"
     >
       <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:32px]" />
       <div className="relative flex items-center gap-8">
         <div className="relative group">
           <div
-            className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full 
+            className="absolute inset-0 bg-linear-to-r from-blue-500 to-purple-600 rounded-full 
           blur-xl opacity-50 group-hover:opacity-75 transition-opacity"
           />
           <img
@@ -93,7 +93,7 @@ function ProfileHeader({ userStats, userData, user }: ProfileHeaderProps) {
           />
           {userData.isPro && (
             <div
-              className="absolute -top-2 -right-2 bg-gradient-to-r from-purple-500 to-purple-600 p-2
+              className="absolute -top-2 -right-2 bg-linear-to-r from-purple-500 to-purple-600 p-2
              rounded-full z-20 shadow-lg animate-pulse"
             >
               <Zap className="w-4 h-4 text-white" />
@@ -124,11 +124,11 @@ function ProfileHeader({ userStats, userData, user }: ProfileHeaderProps) {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
             key={index}
-            className="group relative bg-gradient-to-br from-black/40 to-black/20 rounded-2xl overflow-hidden"
+            className="group relative bg-linear-to-br from-black/40 to-black/20 rounded-2xl overflow-hidden"
           >
             {/* Glow effect */}
             <div
-              className={`absolute inset-0 bg-gradient-to-r ${stat.color} opacity-0 group-hover:opacity-10 transition-all 
+              className={`absolute inset-0 bg-linear-to-r ${stat.color} opacity-0 group-hover:opacity-10 transition-all 
               duration-500 ${stat.gradient}`}
             />
 
@@ -144,7 +144,7 @@ function ProfileHeader({ userStats, userData, user }: ProfileHeaderProps) {
                   </h3>
                   <p className="text-sm text-gray-400 mt-1">{stat.label}</p>
                 </div>
-                <div className={`p-3 rounded-xl bg-gradient-to-br ${stat.color} bg-opacity-10`}>
+                <div className={`p-3 rounded-xl bg-linear-to-br ${stat.color} bg-opacity-10`}>
                   <stat.icon className="w-5 h-5 text-white" />
                 </div>
               </div>
@@ -158,7 +158,7 @@ function ProfileHeader({ userStats, userData, user }: ProfileHeaderProps) {
             </div>
 
             {/* Interactive hover effect */}
-            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full group-hover:translate-x-full duration-1000 transition-transform" />
+            <div className="absolute inset-0 bg-linear-to-r from-transparent via-white/5 to-transparent -translate-x-full group-hover:translate-x-full duration-1000 transition-transform" />
           </motion.div>
         ))}
       </div>

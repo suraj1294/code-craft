@@ -45,7 +45,7 @@ function ThemeSelector() {
         rounded-lg transition-all duration-200 border border-gray-800/50 hover:border-gray-700"
       >
         {/* hover state bg decorator */}
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-purple-500/5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity" />
+        <div className="absolute inset-0 bg-linear-to-r from-blue-500/5 to-purple-500/5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity" />
 
         <Palette className="w-4 h-4 text-gray-400 group-hover:text-gray-300 transition-colors" />
 
@@ -89,7 +89,7 @@ function ThemeSelector() {
               >
                 {/* bg gradient */}
                 <div
-                  className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-purple-500/5 opacity-0 
+                  className="absolute inset-0 bg-linear-to-r from-blue-500/5 to-purple-500/5 opacity-0 
               group-hover:opacity-100 transition-opacity"
                 />
 

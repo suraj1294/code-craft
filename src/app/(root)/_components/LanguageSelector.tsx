@@ -48,7 +48,7 @@ function LanguageSelector({ hasAccess }: { hasAccess: boolean }) {
       >
         {/* Decoration */}
         <div
-          className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/5 
+          className="absolute inset-0 bg-linear-to-r from-blue-500/10 to-purple-500/5 
         rounded-lg opacity-0 group-hover:opacity-100 transition-opacity"
           aria-hidden="true"
         />
@@ -110,7 +110,7 @@ function LanguageSelector({ hasAccess }: { hasAccess: boolean }) {
                     >
                       {/* decorator */}
                       <div
-                        className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-purple-500/5 rounded-lg 
+                        className="absolute inset-0 bg-linear-to-r from-blue-500/5 to-purple-500/5 rounded-lg 
                       opacity-0 group-hover:opacity-100 transition-opacity"
                       />
 
@@ -121,7 +121,7 @@ function LanguageSelector({ hasAccess }: { hasAccess: boolean }) {
                        `}
                       >
                         <div
-                          className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded-lg 
+                          className="absolute inset-0 bg-linear-to-br from-blue-500/10 to-purple-500/10 rounded-lg 
                         opacity-0 group-hover:opacity-100 transition-opacity"
                         />
                         <Image

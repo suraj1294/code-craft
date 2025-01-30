@@ -22,9 +22,9 @@ const CardSkeleton = () => (
 
         {/* Code block shimmer */}
         <div className="space-y-2 bg-black/30 rounded-lg p-4">
-          <div className="w-full h-4 bg-gray-800 rounded animate-pulse" />
-          <div className="w-3/4 h-4 bg-gray-800 rounded animate-pulse" />
-          <div className="w-1/2 h-4 bg-gray-800 rounded animate-pulse" />
+          <div className="w-full h-4 bg-gray-800 rounded-sm animate-pulse" />
+          <div className="w-3/4 h-4 bg-gray-800 rounded-sm animate-pulse" />
+          <div className="w-1/2 h-4 bg-gray-800 rounded-sm animate-pulse" />
         </div>
       </div>
     </div>

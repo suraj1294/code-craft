@@ -14,8 +14,8 @@ function SnippetLoadingSkeleton() {
                 <div>
                   <div className="h-8 w-48 bg-[#ffffff08] rounded-lg animate-pulse mb-2" />
                   <div className="flex gap-4">
-                    <div className="h-5 w-24 bg-[#ffffff08] rounded animate-pulse" />
-                    <div className="h-5 w-24 bg-[#ffffff08] rounded animate-pulse" />
+                    <div className="h-5 w-24 bg-[#ffffff08] rounded-sm animate-pulse" />
+                    <div className="h-5 w-24 bg-[#ffffff08] rounded-sm animate-pulse" />
                   </div>
                 </div>
               </div>
@@ -25,14 +25,14 @@ function SnippetLoadingSkeleton() {
           </div>
           {/* Skeleton Comments Section */}
           <div className="bg-[#121218] border border-[#ffffff0a] rounded-2xl p-6 sm:p-8 backdrop-blur-xl">
-            <div className="h-6 w-32 bg-[#ffffff08] rounded animate-pulse mb-6" />
+            <div className="h-6 w-32 bg-[#ffffff08] rounded-sm animate-pulse mb-6" />
             <div className="space-y-4">
               {[1, 2, 3].map((i) => (
                 <div key={i} className="flex gap-4">
                   <div className="h-10 w-10 rounded-full bg-[#ffffff08] animate-pulse" />
                   <div className="flex-1">
-                    <div className="h-4 w-32 bg-[#ffffff08] rounded animate-pulse mb-2" />
-                    <div className="h-16 bg-[#ffffff08] rounded animate-pulse" />
+                    <div className="h-4 w-32 bg-[#ffffff08] rounded-sm animate-pulse mb-2" />
+                    <div className="h-16 bg-[#ffffff08] rounded-sm animate-pulse" />
                   </div>
                 </div>
               ))}

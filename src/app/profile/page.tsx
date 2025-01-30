@@ -74,7 +74,7 @@ function ProfilePage() {
 
         {/* Main content */}
         <div
-          className="bg-gradient-to-br from-[#12121a] to-[#1a1a2e] rounded-3xl shadow-2xl 
+          className="bg-linear-to-br from-[#12121a] to-[#1a1a2e] rounded-3xl shadow-2xl 
         shadow-black/50 border border-gray-800/50 backdrop-blur-xl overflow-hidden"
         >
           {/* Tabs */}
@@ -127,7 +127,7 @@ function ProfilePage() {
                       <div className="flex items-center justify-between p-4 bg-black/30 border border-gray-800/50 rounded-t-xl">
                         <div className="flex items-center gap-4">
                           <div className="relative">
-                            <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg blur opacity-20 group-hover:opacity-30 transition-opacity" />
+                            <div className="absolute inset-0 bg-linear-to-r from-blue-500 to-purple-500 rounded-lg blur-sm opacity-20 group-hover:opacity-30 transition-opacity" />
                             <Image
                               src={"/" + execution.language + ".png"}
                               alt=""
@@ -230,7 +230,7 @@ function ProfilePage() {
                             <div className="flex items-center justify-between mb-4">
                               <div className="flex items-center gap-3">
                                 <div className="relative">
-                                  <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg blur opacity-20 group-hover:opacity-30 transition-opacity" />
+                                  <div className="absolute inset-0 bg-linear-to-r from-blue-500 to-purple-500 rounded-lg blur-sm opacity-20 group-hover:opacity-30 transition-opacity" />
                                   <Image
                                     src={`/${snippet.language}.png`}
                                     alt={`${snippet.language} logo`}

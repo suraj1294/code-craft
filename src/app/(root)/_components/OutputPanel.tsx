@@ -54,14 +54,14 @@ function OutputPanel() {
       {/* Output Area */}
       <div className="relative">
         <div
-          className="relative bg-[#1e1e2e]/50 backdrop-blur-sm border border-[#313244] 
+          className="relative bg-[#1e1e2e]/50 backdrop-blur-xs border border-[#313244] 
         rounded-xl p-4 h-[600px] overflow-auto font-mono text-sm"
         >
           {isRunning ? (
             <RunningCodeSkeleton />
           ) : error ? (
             <div className="flex items-start gap-3 text-red-400">
-              <AlertTriangle className="w-5 h-5 flex-shrink-0 mt-1" />
+              <AlertTriangle className="w-5 h-5 shrink-0 mt-1" />
               <div className="space-y-1">
                 <div className="font-medium">Execution Error</div>
                 <pre className="whitespace-pre-wrap text-red-400/80">{error}</pre>

@@ -39,7 +39,7 @@ function SnippetCard({ snippet }: { snippet: Snippet }) {
     >
       <Link href={`/snippets/${snippet._id}`} className="h-full block">
         <div
-          className="relative h-full bg-[#1e1e2e]/80 backdrop-blur-sm rounded-xl 
+          className="relative h-full bg-[#1e1e2e]/80 backdrop-blur-xs rounded-xl 
           border border-[#313244]/50 hover:border-[#313244] 
           transition-all duration-300 overflow-hidden"
         >
@@ -49,12 +49,12 @@ function SnippetCard({ snippet }: { snippet: Snippet }) {
               <div className="flex items-center gap-3">
                 <div className="relative">
                   <div
-                    className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg blur opacity-20 
+                    className="absolute inset-0 bg-linear-to-r from-blue-500 to-purple-500 rounded-lg blur opacity-20 
                   group-hover:opacity-30 transition-all duration-500"
                     area-hidden="true"
                   />
                   <div
-                    className="relative p-2 rounded-lg bg-gradient-to-br from-blue-500/10 to-purple-500/10 group-hover:from-blue-500/20
+                    className="relative p-2 rounded-lg bg-linear-to-br from-blue-500/10 to-purple-500/10 group-hover:from-blue-500/20
                    group-hover:to-purple-500/20 transition-all duration-500"
                   >
                     <Image
@@ -123,7 +123,7 @@ function SnippetCard({ snippet }: { snippet: Snippet }) {
               </div>
 
               <div className="relative group/code">
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/15 to-purple-500/5 rounded-lg opacity-0 group-hover/code:opacity-100 transition-all" />
+                <div className="absolute inset-0 bg-linear-to-br from-blue-500/15 to-purple-500/5 rounded-lg opacity-0 group-hover/code:opacity-100 transition-all" />
                 <pre className="relative bg-black/30 rounded-lg p-4 overflow-hidden text-sm text-gray-300 font-mono line-clamp-3">
                   {snippet.code}
                 </pre>

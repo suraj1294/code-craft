@@ -60,7 +60,7 @@ function CommentForm({ isSubmitting, onSubmit }: CommentFormProps) {
             onChange={(e) => setComment(e.target.value)}
             onKeyDown={handleKeyDown}
             placeholder="Add to the discussion..."
-            className="w-full bg-transparent border-0 text-[#e1e1e3] placeholder:text-[#808086] outline-none 
+            className="w-full bg-transparent border-0 text-[#e1e1e3] placeholder:text-[#808086] outline-hidden 
             resize-none min-h-[120px] p-4 font-mono text-sm"
           />
         )}
