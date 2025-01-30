@@ -5,7 +5,7 @@ import { useParams } from "next/navigation";
 import { api } from "../../../../convex/_generated/api";
 import { Id } from "../../../../convex/_generated/dataModel";
 import SnippetLoadingSkeleton from "./_components/SnippetLoadingSkeleton";
-import NavigationHeader from "@/components/NavigationHeader";
+import NavigationHeader from "@/components/navigation-header";
 import { Clock, Code, MessageSquare, User } from "lucide-react";
 import { Editor } from "@monaco-editor/react";
 import { defineMonacoThemes, LANGUAGE_CONFIG } from "@/app/(root)/_constants";
@@ -15,8 +15,12 @@ import Comments from "./_components/Comments";
 function SnippetDetailPage() {
   const snippetId = useParams().id;
 
-  const snippet = useQuery(api.snippets.getSnippetById, { snippetId: snippetId as Id<"snippets"> });
-  const comments = useQuery(api.snippets.getComments, { snippetId: snippetId as Id<"snippets"> });
+  const snippet = useQuery(api.snippets.getSnippetById, {
+    snippetId: snippetId as Id<"snippets">,
+  });
+  const comments = useQuery(api.snippets.getComments, {
+    snippetId: snippetId as Id<"snippets">,
+  });
 
   if (snippet === undefined) return <SnippetLoadingSkeleton />;
 
@@ -48,7 +52,9 @@ function SnippetDetailPage() {
                     </div>
                     <div className="flex items-center gap-2 text-[#8b8b8d]">
                       <Clock className="w-4 h-4" />
-                      <span>{new Date(snippet._creationTime).toLocaleDateString()}</span>
+                      <span>
+                        {new Date(snippet._creationTime).toLocaleDateString()}
+                      </span>
                     </div>
                     <div className="flex items-center gap-2 text-[#8b8b8d]">
                       <MessageSquare className="w-4 h-4" />

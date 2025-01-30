@@ -4,7 +4,7 @@ import { useQuery } from "convex/react";
 import { api } from "../../../convex/_generated/api";
 import { useState } from "react";
 import SnippetsPageSkeleton from "./_components/SnippetsPageSkeleton";
-import NavigationHeader from "@/components/NavigationHeader";
+import NavigationHeader from "@/components/navigation-header";
 
 import { AnimatePresence, motion } from "framer-motion";
 import { BookOpen, Code, Grid, Layers, Search, Tag, X } from "lucide-react";
@@ -35,7 +35,8 @@ function SnippetsPage() {
       snippet.language.toLowerCase().includes(searchQuery.toLowerCase()) ||
       snippet.userName.toLowerCase().includes(searchQuery.toLowerCase());
 
-    const matchesLanguage = !selectedLanguage || snippet.language === selectedLanguage;
+    const matchesLanguage =
+      !selectedLanguage || snippet.language === selectedLanguage;
 
     return matchesSearch && matchesLanguage;
   });
@@ -103,7 +104,9 @@ function SnippetsPage() {
             {popularLanguages.map((lang) => (
               <button
                 key={lang}
-                onClick={() => setSelectedLanguage(lang === selectedLanguage ? null : lang)}
+                onClick={() =>
+                  setSelectedLanguage(lang === selectedLanguage ? null : lang)
+                }
                 className={`
                     group relative px-3 py-1.5 rounded-lg transition-all duration-200
                     ${
@@ -114,7 +117,11 @@ function SnippetsPage() {
                   `}
               >
                 <div className="flex items-center gap-2">
-                  <img src={`/${lang}.png`} alt={lang} className="w-4 h-4 object-contain" />
+                  <img
+                    src={`/${lang}.png`}
+                    alt={lang}
+                    className="w-4 h-4 object-contain"
+                  />
                   <span className="text-sm">{lang}</span>
                 </div>
               </button>
@@ -192,7 +199,9 @@ function SnippetsPage() {
               >
                 <Code className="w-8 h-8 text-gray-400" />
               </div>
-              <h3 className="text-xl font-medium text-white mb-3">No snippets found</h3>
+              <h3 className="text-xl font-medium text-white mb-3">
+                No snippets found
+              </h3>
               <p className="text-gray-400 mb-6">
                 {searchQuery || selectedLanguage
                   ? "Try adjusting your search query or filters"

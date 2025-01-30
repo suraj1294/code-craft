@@ -4,14 +4,21 @@ import { usePaginatedQuery, useQuery } from "convex/react";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { api } from "../../../convex/_generated/api";
-import NavigationHeader from "@/components/NavigationHeader";
+import NavigationHeader from "@/components/navigation-header";
 import ProfileHeader from "./_components/ProfileHeader";
 import ProfileHeaderSkeleton from "./_components/ProfileHeaderSkeleton";
-import { ChevronRight, Clock, Code, ListVideo, Loader2, Star } from "lucide-react";
+import {
+  ChevronRight,
+  Clock,
+  Code,
+  ListVideo,
+  Loader2,
+  Star,
+} from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import StarButton from "@/components/StarButton";
+import StarButton from "@/components/star-button";
 import CodeBlock from "./_components/CodeBlock";
 
 const TABS = [
@@ -30,7 +37,9 @@ const TABS = [
 function ProfilePage() {
   const { user, isLoaded } = useUser();
   const router = useRouter();
-  const [activeTab, setActiveTab] = useState<"executions" | "starred">("executions");
+  const [activeTab, setActiveTab] = useState<"executions" | "starred">(
+    "executions"
+  );
 
   const userStats = useQuery(api.codeExecutions.getUserStats, {
     userId: user?.id ?? "",
@@ -67,7 +76,11 @@ function ProfilePage() {
         {/* Profile Header */}
 
         {userStats && userData && (
-          <ProfileHeader userStats={userStats} userData={userData} user={user!} />
+          <ProfileHeader
+            userStats={userStats}
+            userData={userData}
+            user={user!}
+          />
         )}
 
         {(userStats === undefined || !isLoaded) && <ProfileHeaderSkeleton />}
@@ -83,9 +96,13 @@ function ProfilePage() {
               {TABS.map((tab) => (
                 <button
                   key={tab.id}
-                  onClick={() => setActiveTab(tab.id as "executions" | "starred")}
+                  onClick={() =>
+                    setActiveTab(tab.id as "executions" | "starred")
+                  }
                   className={`group flex items-center gap-2 px-6 py-2.5 rounded-lg transition-all duration-200 relative overflow-hidden ${
-                    activeTab === tab.id ? "text-blue-400" : "text-gray-400 hover:text-gray-300"
+                    activeTab === tab.id
+                      ? "text-blue-400"
+                      : "text-gray-400 hover:text-gray-300"
                   }`}
                 >
                   {activeTab === tab.id && (
@@ -100,7 +117,9 @@ function ProfilePage() {
                     />
                   )}
                   <tab.icon className="w-4 h-4 relative z-10" />
-                  <span className="text-sm font-medium relative z-10">{tab.label}</span>
+                  <span className="text-sm font-medium relative z-10">
+                    {tab.label}
+                  </span>
                 </button>
               ))}
             </div>
@@ -143,7 +162,9 @@ function ProfilePage() {
                               </span>
                               <span className="text-xs text-gray-400">•</span>
                               <span className="text-xs text-gray-400">
-                                {new Date(execution._creationTime).toLocaleString()}
+                                {new Date(
+                                  execution._creationTime
+                                ).toLocaleString()}
                               </span>
                             </div>
                             <div className="flex items-center gap-2">
@@ -162,14 +183,21 @@ function ProfilePage() {
                       </div>
 
                       <div className="p-4 bg-black/20 rounded-b-xl border border-t-0 border-gray-800/50">
-                        <CodeBlock code={execution.code} language={execution.language} />
+                        <CodeBlock
+                          code={execution.code}
+                          language={execution.language}
+                        />
 
                         {(execution.output || execution.error) && (
                           <div className="mt-4 p-4 rounded-lg bg-black/40">
-                            <h4 className="text-sm font-medium text-gray-400 mb-2">Output</h4>
+                            <h4 className="text-sm font-medium text-gray-400 mb-2">
+                              Output
+                            </h4>
                             <pre
                               className={`text-sm ${
-                                execution.error ? "text-red-400" : "text-green-400"
+                                execution.error
+                                  ? "text-red-400"
+                                  : "text-green-400"
                               }`}
                             >
                               {execution.error || execution.output}
@@ -194,7 +222,9 @@ function ProfilePage() {
                         <h3 className="text-lg font-medium text-gray-400 mb-2">
                           No code executions yet
                         </h3>
-                        <p className="text-gray-500">Start coding to see your execution history!</p>
+                        <p className="text-gray-500">
+                          Start coding to see your execution history!
+                        </p>
                       </div>
                     )
                   )}
@@ -256,7 +286,11 @@ function ProfilePage() {
                             <div className="flex items-center justify-between text-sm text-gray-400">
                               <div className="flex items-center gap-2">
                                 <Clock className="w-4 h-4" />
-                                <span>{new Date(snippet._creationTime).toLocaleDateString()}</span>
+                                <span>
+                                  {new Date(
+                                    snippet._creationTime
+                                  ).toLocaleDateString()}
+                                </span>
                               </div>
                               <ChevronRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
                             </div>

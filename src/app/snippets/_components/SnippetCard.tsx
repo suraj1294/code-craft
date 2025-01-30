@@ -10,7 +10,7 @@ import Link from "next/link";
 import { Clock, Trash2, User } from "lucide-react";
 import Image from "next/image";
 import toast from "react-hot-toast";
-import StarButton from "@/components/StarButton";
+import StarButton from "@/components/star-button";
 
 function SnippetCard({ snippet }: { snippet: Snippet }) {
   const { user } = useUser();
@@ -117,7 +117,9 @@ function SnippetCard({ snippet }: { snippet: Snippet }) {
                     <div className="p-1 rounded-md bg-gray-800/50">
                       <User className="size-3" />
                     </div>
-                    <span className="truncate max-w-[150px]">{snippet.userName}</span>
+                    <span className="truncate max-w-[150px]">
+                      {snippet.userName}
+                    </span>
                   </div>
                 </div>
               </div>
