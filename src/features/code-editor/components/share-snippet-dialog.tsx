@@ -1,4 +1,4 @@
-import { useCodeEditorStore } from "@/store/useCodeEditorStore";
+import { useCodeEditorStore } from "@/features/code-editor/store/useCodeEditorStore";
 import { useMutation } from "convex/react";
 import { useState } from "react";
 import { api } from "../../../../convex/_generated/api";
@@ -35,14 +35,20 @@ function ShareSnippetDialog({ onClose }: { onClose: () => void }) {
       <div className="bg-[#1e1e2e] rounded-lg p-6 w-full max-w-md">
         <div className="flex items-center justify-between mb-4">
           <h2 className="text-xl font-semibold text-white">Share Snippet</h2>
-          <button onClick={onClose} className="text-gray-400 hover:text-gray-300">
+          <button
+            onClick={onClose}
+            className="text-gray-400 hover:text-gray-300"
+          >
             <X className="w-5 h-5" />
           </button>
         </div>
 
         <form onSubmit={handleShare}>
           <div className="mb-4">
-            <label htmlFor="title" className="block text-sm font-medium text-gray-400 mb-2">
+            <label
+              htmlFor="title"
+              className="block text-sm font-medium text-gray-400 mb-2"
+            >
               Title
             </label>
             <input

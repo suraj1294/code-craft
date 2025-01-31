@@ -1,10 +1,18 @@
 "use client";
 
-import { useCodeEditorStore } from "@/store/useCodeEditorStore";
+import { useCodeEditorStore } from "@/features/code-editor/store/useCodeEditorStore";
 import React, { useEffect, useRef, useState } from "react";
-import { THEMES } from "../_constants";
+import { THEMES } from "../constant";
 import { AnimatePresence, motion } from "framer-motion";
-import { CircleOff, Cloud, Github, Laptop, Moon, Palette, Sun } from "lucide-react";
+import {
+  CircleOff,
+  Cloud,
+  Github,
+  Laptop,
+  Moon,
+  Palette,
+  Sun,
+} from "lucide-react";
 import useMounted from "@/hooks/useMounted";
 
 const THEME_ICONS: Record<string, React.ReactNode> = {
@@ -24,7 +32,10 @@ function ThemeSelector() {
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
         setIsOpen(false);
       }
     };
@@ -72,7 +83,9 @@ function ThemeSelector() {
             backdrop-blur-xl rounded-xl border border-[#313244] shadow-2xl py-2 z-50"
           >
             <div className="px-2 pb-2 mb-2 border-b border-gray-800/50">
-              <p className="text-xs font-medium text-gray-400 px-2">Select Theme</p>
+              <p className="text-xs font-medium text-gray-400 px-2">
+                Select Theme
+              </p>
             </div>
 
             {THEMES.map((t, index) => (

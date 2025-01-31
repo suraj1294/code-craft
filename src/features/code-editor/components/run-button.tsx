@@ -1,6 +1,9 @@
 "use client";
 
-import { getExecutionResult, useCodeEditorStore } from "@/store/useCodeEditorStore";
+import {
+  getExecutionResult,
+  useCodeEditorStore,
+} from "@/features/code-editor/store/useCodeEditorStore";
 import { useUser } from "@clerk/nextjs";
 import { useMutation } from "convex/react";
 import { motion } from "framer-motion";
@@ -48,7 +51,9 @@ function RunButton() {
               <Loader2 className="w-4 h-4 animate-spin text-white/70" />
               <div className="absolute inset-0 blur-sm animate-pulse" />
             </div>
-            <span className="text-sm font-medium text-white/90">Executing...</span>
+            <span className="text-sm font-medium text-white/90">
+              Executing...
+            </span>
           </>
         ) : (
           <>
