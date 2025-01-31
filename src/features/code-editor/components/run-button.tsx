@@ -5,15 +5,14 @@ import {
   useCodeEditorStore,
 } from "@/features/code-editor/store/useCodeEditorStore";
 import { useUser } from "@clerk/nextjs";
-import { useMutation } from "convex/react";
 import { motion } from "framer-motion";
 import { Loader2, Play } from "lucide-react";
-import { api } from "../../../../convex/_generated/api";
+import useSaveExecution from "@/features/code-editor/api/useSaveExecution";
 
 function RunButton() {
   const { user } = useUser();
   const { runCode, language, isRunning } = useCodeEditorStore();
-  const saveExecution = useMutation(api.codeExecutions.saveExecution);
+  const saveExecution = useSaveExecution();
 
   const handleRun = async () => {
     await runCode();

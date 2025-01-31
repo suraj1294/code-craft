@@ -1,15 +1,17 @@
 import { useAuth } from "@clerk/nextjs";
 import { Id } from "../../convex/_generated/dataModel";
-import { useMutation, useQuery } from "convex/react";
-import { api } from "../../convex/_generated/api";
+
 import { Star } from "lucide-react";
+import useGetSnippetStarCount from "@/features/code-editor/api/useGetSnippetStarCount";
+import useGetSnippetStarred from "@/features/code-editor/api/useGetSnippetStarred";
+import useStarSnippet from "@/features/code-editor/api/useStarSnippet";
 
 function StarButton({ snippetId }: { snippetId: Id<"snippets"> }) {
   const { isSignedIn } = useAuth();
 
-  const isStarred = useQuery(api.snippets.isSnippetStarred, { snippetId });
-  const starCount = useQuery(api.snippets.getSnippetStarCount, { snippetId });
-  const star = useMutation(api.snippets.starSnippet);
+  const isStarred = useGetSnippetStarred(snippetId);
+  const starCount = useGetSnippetStarCount(snippetId);
+  const star = useStarSnippet();
 
   const handleStar = async () => {
     if (!isSignedIn) return;
@@ -29,7 +31,9 @@ function StarButton({ snippetId }: { snippetId: Id<"snippets"> }) {
       <Star
         className={`w-4 h-4 ${isStarred ? "fill-yellow-500" : "fill-none group-hover:fill-gray-400"}`}
       />
-      <span className={`text-xs font-medium ${isStarred ? "text-yellow-500" : "text-gray-400"}`}>
+      <span
+        className={`text-xs font-medium ${isStarred ? "text-yellow-500" : "text-gray-400"}`}
+      >
         {starCount}
       </span>
     </button>
