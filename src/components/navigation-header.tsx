@@ -1,4 +1,4 @@
-import HeaderProfileBtn from "@/app/(root)/_components/HeaderProfileBtn";
+import HeaderProfileBtn from "@/features/code-editor/components/header-profile-btn";
 import { SignedOut } from "@clerk/nextjs";
 import { Blocks, Code2, Sparkles } from "lucide-react";
 import Link from "next/link";
