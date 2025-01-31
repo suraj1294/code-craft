@@ -11,7 +11,7 @@ import useGetStarSnippets from "@/features/profile/api/useGetStarSnippets";
 import useGetUserStats from "@/features/profile/api/useGetUserStats";
 import {
   ExecutionsList,
-  StarredSnippetsList,
+  StarredSnippet,
   TabButton,
   TABS,
 } from "@/features/profile/components/code-execution-tabs";
@@ -26,7 +26,7 @@ function ProfilePage() {
   );
 
   const { userStats } = useGetUserStats(user?.id ?? "");
-  const { starredSnippets } = useGetStarSnippets();
+  const starredSnippets = useGetStarSnippets();
   const { executions, executionStatus, isLoadingExecutions, loadMore } =
     useGetUserExecutions(user?.id ?? "", 5);
   const userData = useGetUserData(user?.id ?? "");
@@ -95,9 +95,8 @@ function ProfilePage() {
               {activeTab === "starred" && (
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {starredSnippets?.map((snippet) => (
-                    <StarredSnippetsList key={snippet._id} snippet={snippet} />
+                    <StarredSnippet key={snippet._id} snippet={snippet} />
                   ))}
-
                   {(!starredSnippets || starredSnippets.length === 0) && (
                     <div className="col-span-full text-center py-12">
                       <Star className="w-12 h-12 text-gray-600 mx-auto mb-4" />

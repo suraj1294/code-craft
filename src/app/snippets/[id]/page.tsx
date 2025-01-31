@@ -1,30 +1,25 @@
 "use client";
 
-import { useQuery } from "convex/react";
 import { useParams } from "next/navigation";
-import { api } from "../../../../convex/_generated/api";
-import { Id } from "../../../../convex/_generated/dataModel";
-import SnippetLoadingSkeleton from "./_components/SnippetLoadingSkeleton";
 import NavigationHeader from "@/components/navigation-header";
 import { Clock, Code, MessageSquare, User } from "lucide-react";
 import { Editor } from "@monaco-editor/react";
-
-import CopyButton from "./_components/CopyButton";
-import Comments from "./_components/Comments";
 import {
   defineMonacoThemes,
   LANGUAGE_CONFIG,
 } from "@/features/code-editor/constant";
+import useGetSnippet from "@/features/snippets/api/useGetSnippet";
+import CommentsSection from "@/features/snippet/components/comments-section";
+import SnippetLoadingSkeleton from "@/features/snippet/components/snippet-loading-skeleton";
+import CopyButton from "@/features/snippet/components/copy-button";
+import useGetComments from "@/features/snippet/api/useGetComments";
+import { Id } from "../../../../convex/_generated/dataModel";
 
 function SnippetDetailPage() {
   const snippetId = useParams().id;
 
-  const snippet = useQuery(api.snippets.getSnippetById, {
-    snippetId: snippetId as Id<"snippets">,
-  });
-  const comments = useQuery(api.snippets.getComments, {
-    snippetId: snippetId as Id<"snippets">,
-  });
+  const snippet = useGetSnippet(snippetId as string);
+  const comments = useGetComments(snippetId as Id<"snippets">);
 
   if (snippet === undefined) return <SnippetLoadingSkeleton />;
 
@@ -102,7 +97,7 @@ function SnippetDetailPage() {
             />
           </div>
 
-          <Comments snippetId={snippet._id} />
+          <CommentsSection snippetId={snippet._id} />
         </div>
       </main>
     </div>

@@ -1,17 +1,16 @@
 "use client";
 
-import { useQuery } from "convex/react";
-import { api } from "../../../convex/_generated/api";
 import { useState } from "react";
-import SnippetsPageSkeleton from "./_components/SnippetsPageSkeleton";
+import SnippetsPageSkeleton from "@/features/snippets/components/snippets-page-skeleton";
 import NavigationHeader from "@/components/navigation-header";
 
 import { AnimatePresence, motion } from "framer-motion";
 import { BookOpen, Code, Grid, Layers, Search, Tag, X } from "lucide-react";
-import SnippetCard from "./_components/SnippetCard";
+import SnippetCard from "@/features/snippets/components/snippet-card";
+import useGetSnippets from "@/features/snippets/api/useGetSnippets";
 
 function SnippetsPage() {
-  const snippets = useQuery(api.snippets.getSnippets);
+  const snippets = useGetSnippets();
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedLanguage, setSelectedLanguage] = useState<string | null>(null);
   const [view, setView] = useState<"grid" | "list">("grid");

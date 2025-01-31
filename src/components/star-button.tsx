@@ -2,9 +2,9 @@ import { useAuth } from "@clerk/nextjs";
 import { Id } from "../../convex/_generated/dataModel";
 
 import { Star } from "lucide-react";
-import useGetSnippetStarCount from "@/features/code-editor/api/useGetSnippetStarCount";
-import useGetSnippetStarred from "@/features/code-editor/api/useGetSnippetStarred";
-import useStarSnippet from "@/features/code-editor/api/useStarSnippet";
+import useGetSnippetStarCount from "@/features/snippets/api/useGetSnippetStarCount";
+import useGetSnippetStarred from "@/features/snippets/api/useGetSnippetStarred";
+import useStarSnippet from "@/features/snippets/api/useStarSnippet";
 
 function StarButton({ snippetId }: { snippetId: Id<"snippets"> }) {
   const { isSignedIn } = useAuth();

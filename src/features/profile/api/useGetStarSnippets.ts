@@ -4,9 +4,7 @@ import { api } from "../../../../convex/_generated/api";
 const useGetStarSnippets = () => {
   const starredSnippets = useQuery(api.snippets.getStarredSnippets);
 
-  return {
-    starredSnippets,
-  };
+  return starredSnippets;
 };
 
 export default useGetStarSnippets;

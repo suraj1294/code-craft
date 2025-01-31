@@ -39,7 +39,7 @@ interface ProfileHeaderProps {
 }
 
 function ProfileHeader({ userStats, userData, user }: ProfileHeaderProps) {
-  const { starredSnippets } = useGetStarSnippets();
+  const starredSnippets = useGetStarSnippets();
   const STATS = [
     {
       label: "Code Executions",

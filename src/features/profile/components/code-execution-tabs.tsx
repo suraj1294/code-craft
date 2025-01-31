@@ -1,8 +1,8 @@
+"use client";
 import {
   ChevronRight,
   Clock,
   Code,
-  Link,
   ListVideo,
   Loader2,
   LucideProps,
@@ -14,6 +14,7 @@ import { motion } from "framer-motion";
 import { ForwardRefExoticComponent, RefAttributes } from "react";
 import CodeBlock from "./code-block";
 import StarButton from "@/components/star-button";
+import Link from "next/link";
 
 export interface Executions {
   _id: Id<"codeExecutions">;
@@ -205,11 +206,7 @@ export const ExecutionsList = ({
   );
 };
 
-export const StarredSnippetsList = ({
-  snippet,
-}: {
-  snippet: StarredSnippets;
-}) => {
+export const StarredSnippet = ({ snippet }: { snippet: StarredSnippets }) => {
   return (
     <div className="group relative">
       <Link href={`/snippets/${snippet._id}`}>

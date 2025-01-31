@@ -1,6 +1,7 @@
 import { Trash2Icon, UserIcon } from "lucide-react";
-import { Id } from "../../../../../convex/_generated/dataModel";
-import CommentContent from "./CommentContent";
+
+import CommentContent from "./comment-content";
+import { Id } from "../../../../convex/_generated/dataModel";
 
 interface CommentProps {
   comment: {
@@ -15,7 +16,12 @@ interface CommentProps {
   isDeleting: boolean;
   currentUserId?: string;
 }
-function Comment({ comment, currentUserId, isDeleting, onDelete }: CommentProps) {
+function CommentSection({
+  comment,
+  currentUserId,
+  isDeleting,
+  onDelete,
+}: CommentProps) {
   return (
     <div className="group">
       <div className="bg-[#0a0a0f] rounded-xl p-6 border border-[#ffffff0a] hover:border-[#ffffff14] transition-all">
@@ -25,7 +31,9 @@ function Comment({ comment, currentUserId, isDeleting, onDelete }: CommentProps)
               <UserIcon className="w-4 h-4 text-[#808086]" />
             </div>
             <div className="min-w-0">
-              <span className="block text-[#e1e1e3] font-medium truncate">{comment.userName}</span>
+              <span className="block text-[#e1e1e3] font-medium truncate">
+                {comment.userName}
+              </span>
               <span className="block text-sm text-[#808086]">
                 {new Date(comment._creationTime).toLocaleDateString()}
               </span>
@@ -49,4 +57,4 @@ function Comment({ comment, currentUserId, isDeleting, onDelete }: CommentProps)
     </div>
   );
 }
-export default Comment;
+export default CommentSection;

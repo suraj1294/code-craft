@@ -1,6 +1,6 @@
 import { CodeIcon, SendIcon } from "lucide-react";
 import { useState } from "react";
-import CommentContent from "./CommentContent";
+import CommentContent from "./comment-content";
 
 interface CommentFormProps {
   onSubmit: (comment: string) => Promise<void>;
@@ -16,7 +16,8 @@ function CommentForm({ isSubmitting, onSubmit }: CommentFormProps) {
       e.preventDefault();
       const start = e.currentTarget.selectionStart;
       const end = e.currentTarget.selectionEnd;
-      const newComment = comment.substring(0, start) + "  " + comment.substring(end);
+      const newComment =
+        comment.substring(0, start) + "  " + comment.substring(end);
       setComment(newComment);
       e.currentTarget.selectionStart = e.currentTarget.selectionEnd = start + 2;
     }
@@ -42,7 +43,9 @@ function CommentForm({ isSubmitting, onSubmit }: CommentFormProps) {
             type="button"
             onClick={() => setIsPreview(!isPreview)}
             className={`text-sm px-3 py-1 rounded-md transition-colors ${
-              isPreview ? "bg-blue-500/10 text-blue-400" : "hover:bg-[#ffffff08] text-gray-400"
+              isPreview
+                ? "bg-blue-500/10 text-blue-400"
+                : "hover:bg-[#ffffff08] text-gray-400"
             }`}
           >
             {isPreview ? "Edit" : "Preview"}
