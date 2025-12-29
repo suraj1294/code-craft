@@ -15,7 +15,7 @@
     "convex": "^1.17.4",
     "lucide-react": "^0.464.0",
     "motion": "^11.17.0",
-    "next": "15.1.4",
+    "next": "15.1.11",
     "react": "19.0.0",
     "react-dom": "19.0.0",
     "react-hot-toast": "^2.4.1",
